@@ -3,64 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Flexbox Layout</title>
+    <title>Document</title>
     <style>
-        body {
-            font-family: 'Times New Roman', Times, serif;
-            margin: 0;
-            padding: 0;
-            background-color: #630000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        body, html {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: Arial, sans-serif;
         }
-
-        .flex-container {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            width: 80%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #808080;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(105, 140, 255, 0.1);
+    
+        .container {
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
         }
-
-        .flex-item {
-            background-color: #ede903;
-            color: #3f0000;
-            padding: 20px;
-            margin: 10px;
-            flex: 1;
-            text-align: center;
-            border-radius: 4px;
-            transition: background-color 0.3s;
+    
+        header, footer {
+          background-color: #333;
+          color: white;
+          text-align: center;
+          padding: 1rem;
         }
-
-        .flex-item:hover {
-            background-color: #f800fc;
+    
+        .main-content {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
         }
-
-        @media (max-width: 768px) {
-            .flex-container {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .flex-item {
-                margin: 10px 0;
-            }
+    
+        .content {
+          flex: 1;
+          display: flex;
+          flex-wrap: wrap;
         }
-    </style>
+    
+        .box {
+          flex: 1 1 200px;
+          margin: 10px;
+          background-color: #ffffff;
+          padding: 20px;
+          box-shadow: 0 0 10px rgba(1,76,97,88);
+        }
+    
+        @media (min-width: 300px) {
+          .main-content {
+            flex-direction: row;
+          }
+    
+          .content {
+            flex-direction: row;
+          }
+    
+          .box {
+            flex: 1 1 300px;
+          }
+        }
+      </style>
 </head>
-<body>
-    <div class="flex-container">
-        <div class="flex-item">1</div>
-        <div class="flex-item">2</div>
-        <div class="flex-item">3</div>
+<body text>
+    <div class="container">
+    <header>
+        <h1>Flex box layout</h1>
+    </header>
+    <div class="main">
+        <aside class="box">
+            <h1>This is the place where all list are available</h1>
+        </aside>
+
+        <section class="content">
+            <div class="box">
+                <h2>box-1</h2>
+                </div>
+            <div class="box">
+                <h2>box-2</h2>
+            </div>
+            <div class="box">
+                <h2>box-3</h2>
+            </div>
+
+        </section>
     </div>
+    <footer>
+        <h1>Please register for the website</h1>
+    </footer>
+</div>
 </body>
 </html>

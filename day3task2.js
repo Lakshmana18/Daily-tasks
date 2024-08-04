@@ -1,6 +1,6 @@
 function calculateFactorial() {
     const input = document.getElementById('numberInput').value;
-    const resultElement = document.getElementById('result');
+    const resultElement = document.getElementById('value');
     
     // Validate input
     if (input === '' || isNaN(input) || input < 0) {
